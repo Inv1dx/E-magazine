@@ -331,6 +331,16 @@ p {
   font-weight: 720;
 }
 
+.article-subtitle {
+  max-width: 760px;
+  margin-top: -0.35rem;
+  color: var(--navy-soft);
+  font-family: var(--header-font);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: 650;
+  line-height: 1.35;
+}
+
 .card-link {
   margin-top: auto;
   padding: 0.65rem 0.85rem;
@@ -503,8 +513,67 @@ figcaption {
   margin: 0;
 }
 
-.placeholder-article {
-  background: rgba(255, 253, 248, 0.42);
+.sustainability-quote {
+  border-left-color: var(--sustainability);
+}
+
+.transport-quote {
+  border-left-color: var(--transport);
+}
+
+.article-list {
+  margin: 0 0 1.5rem;
+  padding-left: 1.2rem;
+}
+
+.article-list li + li {
+  margin-top: 0.8rem;
+}
+
+.table-wrap {
+  position: relative;
+  left: 50%;
+  width: min(1050px, calc(100vw - 2rem));
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+  transform: translateX(-50%);
+  border: 1px solid var(--border);
+  border-radius: 0.55rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.data-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-family: var(--header-font);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.8rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.data-table th {
+  background: var(--navy);
+  color: #fffaf2;
+  font-weight: 820;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.data-table td:first-child {
+  width: 30%;
+  color: var(--navy);
+  font-weight: 760;
 }
 
 .article-sustainability {
@@ -515,10 +584,6 @@ figcaption {
   border-top: 8px solid var(--transport);
 }
 
-.placeholder-header {
-  border-bottom-style: dashed;
-}
-
 .article-sustainability .section-eyebrow {
   color: var(--sustainability);
 }
@@ -527,7 +592,7 @@ figcaption {
   color: var(--transport);
 }
 
-.placeholder-note {
+.article-note {
   padding: 1rem 1.15rem;
   border: 1px solid var(--border);
   border-left: 5px solid currentColor;
@@ -540,37 +605,17 @@ figcaption {
   line-height: 1.5;
 }
 
-.article-sustainability .placeholder-note {
+.article-sustainability .article-note {
   border-left-color: var(--sustainability);
 }
 
-.article-transport .placeholder-note {
+.article-transport .article-note {
   border-left-color: var(--transport);
 }
 
 .bridge-sentence {
   color: var(--muted);
   font-style: italic;
-}
-
-.placeholder-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.visual-placeholder {
-  margin: 0;
-}
-
-.visual-placeholder div {
-  min-height: 230px;
-  border: 1px dashed #aa9d90;
-  border-radius: 0.5rem;
-  background:
-    linear-gradient(135deg, rgba(18, 52, 59, 0.05) 25%, transparent 25%) 0 0 / 22px 22px,
-    var(--surface);
 }
 
 .closing-section {
@@ -609,6 +654,17 @@ figcaption {
 .reference-card h3 {
   margin: 0 0 0.9rem;
   font-size: 1.25rem;
+}
+
+.reference-card h4 {
+  margin: 1.1rem 0 0.35rem;
+  color: #f8f1e9;
+  font-family: var(--header-font);
+  font-size: 0.98rem;
+}
+
+.reference-card h3 + h4 {
+  margin-top: 0;
 }
 
 .reference-card p,
@@ -657,7 +713,6 @@ figcaption {
 
   .article-grid,
   .purpose-links,
-  .placeholder-grid,
   .reference-grid {
     grid-template-columns: 1fr;
   }
@@ -761,12 +816,8 @@ figcaption {
 
   .preview-card,
   .reference-card,
-  .placeholder-note {
+  .article-note {
     padding: 1rem;
-  }
-
-  .visual-placeholder div {
-    min-height: 170px;
   }
 
   .pull-quote {
